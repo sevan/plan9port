@@ -5,6 +5,7 @@ jobs:
   Build-on-Ubuntu:
     runs-on: [ubuntu-latest]
     steps:
+      - uses: actions/checkout@v3
       - name: Install build deps
         run: sudo apt install build-essential xorg-dev
       - name: Build p9p
@@ -13,6 +14,7 @@ jobs:
   Build-on-macOS:
     runs-on: [macos-latest]
     steps:
+      - uses: actions/checkout@v3
       - name: Build p9p
         run: ./INSTALL
       - run: echo "🍏 This job's status is ${{ job.status }}."
