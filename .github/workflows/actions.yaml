@@ -7,7 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install build deps
-        run: sudo apt install build-essential xorg-dev
+        run: |
+          sudo apt update
+          sudo apt install build-essential xorg-dev
       - name: Build p9p
         run: ./INSTALL
       - run: echo "🍏 This job's status is ${{ job.status }}."
