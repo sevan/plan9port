@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} triggered a build
 on: [push]
 jobs:
   Build-on-Ubuntu:
-    runs-on: [ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
+    runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v3
       - name: Install build deps
@@ -13,7 +13,7 @@ jobs:
       - name: Build p9p
         run: ./INSTALL
   Build-on-macOS:
-    runs-on: [macos-11, macos-12, macos-latest]
+    runs-on: [macos-latest]
     steps:
       - uses: actions/checkout@v3
       - name: Build p9p
