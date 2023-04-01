@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing Plan9Port out from GitHub Actions 🚀
 on: [push]
 jobs:
   Build-on-Ubuntu:
-    runs-on: [ubuntu-latest]
+    runs-on: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
     steps:
       - uses: actions/checkout@v3
       - name: Install build deps
@@ -12,11 +12,9 @@ jobs:
           sudo apt install build-essential xorg-dev
       - name: Build p9p
         run: ./INSTALL
-      - run: echo "🍏 This job's status is ${{ job.status }}."
   Build-on-macOS:
-    runs-on: [macos-latest]
+    runs-on: [macos-10.15, macos-11, macos-12, macos-latest]
     steps:
       - uses: actions/checkout@v3
       - name: Build p9p
         run: ./INSTALL
-      - run: echo "🍏 This job's status is ${{ job.status }}."
